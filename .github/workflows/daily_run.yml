@@ -1,0 +1,27 @@
+name: Daily Prediction Engine
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r engine/requirements.txt
+      - name: Run Prediction Script
+        run: python engine/predict.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "action@github.com"
+          git add frontend/public/data/daily_predictions.json
+          git commit -m "update: daily predictions" || exit 0
+          git push

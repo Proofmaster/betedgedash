@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "date": "2026-04-27",
+        "homeTeam": "Red Star Belgrade",
+        "awayTeam": "Partizan",
+        "homeWinProb": 52.4,
+        "drawProb": 25.1,
+        "awayWinProb": 22.5,
+        "modelValueEdge": true,
+        "recommendedBet": "Home Win"
+    },
+    {
+        "date": "2026-04-27",
+        "homeTeam": "Arsenal",
+        "awayTeam": "Liverpool",
+        "homeWinProb": 41.0,
+        "drawProb": 29.0,
+        "awayWinProb": 30.0,
+        "modelValueEdge": false,
+        "recommendedBet": "Pass"
+    }
+]
